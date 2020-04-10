@@ -11,7 +11,7 @@ import {getConfig} from '@mm-redux/selectors/entities/general';
 import {getTeammateNameDisplaySetting, getTheme, getBool} from '@mm-redux/selectors/entities/preferences';
 import {isTimezoneEnabled} from '@mm-redux/selectors/entities/timezone';
 import Preferences from '@mm-redux/constants/preferences';
-import {loadBot} from '@mm-redux/actions/bots';
+import {loadBot} from '@actions/bots';
 import {getBotAccounts} from '@mm-redux/selectors/entities/bots';
 import {getCurrentUserId} from '@mm-redux/selectors/entities/users';
 

@@ -4,6 +4,5 @@
 import keyMirror from '@mm-redux/utils/key_mirror';
 
 export default keyMirror({
-    RECEIVED_BOT_ACCOUNTS: null,
     RECEIVED_BOT_ACCOUNT: null,
 });
