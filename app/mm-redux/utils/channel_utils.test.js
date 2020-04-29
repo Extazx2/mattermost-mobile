@@ -27,7 +27,7 @@ describe('ChannelUtils', () => {
         const teamAdminsCanManageMembers = {RestrictPrivateChannelManageMembers: General.PERMISSIONS_TEAM_ADMIN};
         const systemAdminsCanManageMembers = {RestrictPrivateChannelManageMembers: General.PERMISSIONS_SYSTEM_ADMIN};
 
-        const townSquareChannel = {name: General.DEFAULT_CHANNEL, type: General.OPEN_CHANNEL};
+        const townSquareChannel = {name: General.DEFAULT_CHANNEL_NAME, type: General.OPEN_CHANNEL};
         const publicChannel = {type: General.PUBLIC_CHANNEL};
         const privateChannel = {type: General.PRIVATE_CHANNEL};
         const gmChannel = {type: General.GM_CHANNEL};

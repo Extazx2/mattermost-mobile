@@ -1,7 +1,6 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import * as channels from './channels';
 import * as errors from './errors';
 import * as emojis from './emojis';
 import * as files from './files';
@@ -21,7 +20,6 @@ import * as timezone from './timezone';
 import * as users from './users';
 
 export {
-    channels,
     errors,
     emojis,
     files,

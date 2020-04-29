@@ -22,11 +22,13 @@ import {getCurrentChannelId} from '@mm-redux/selectors/entities/channels';
 import {removeUserFromList} from '@mm-redux/utils/user_utils';
 import {isUnreadChannel, isArchivedChannel} from '@mm-redux/utils/channel_utils';
 
+import {setLastGetPostsForChannel} from '@actions/views/channels';
+
 import {ViewTypes} from '@constants';
 import {generateId} from '@utils/file';
 import {getChannelSinceValue} from '@utils/channels';
 
-import {getEmojisInPosts} from './emoji';
+import {getEmojisInPosts} from '@actions/views/emoji';
 
 export function sendAddToChannelEphemeralPost(user, addedUsername, message, channelId, postRootId = '') {
     return async (dispatch) => {
@@ -454,11 +456,7 @@ export function loadUnreadChannelPosts(channels, channelMembers) {
                         actions.push(receivedPostsInChannel(data, trace.channelId, true, data.prev_post_id === ''));
                     }
 
-                    actions.push({
-                        type: ViewTypes.RECEIVED_POSTS_FOR_CHANNEL_AT_TIME,
-                        channelId: trace.channelId,
-                        time: Date.now(),
-                    });
+                    actions.push(setLastGetPostsForChannel(trace.channelId, Date.now()));
                 }
             });
         }
@@ -473,5 +471,7 @@ export function loadUnreadChannelPosts(channels, channelMembers) {
 
             dispatch(batchActions(actions));
         }
+
+        return {data: true};
     };
 }
